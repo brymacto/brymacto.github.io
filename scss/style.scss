@@ -10,8 +10,16 @@ $dark: #333;
 
 body {
   font-family: "Source Sans Pro", sans-serif;
-  padding: 1rem;
   background-color: $bg;
+}
+
+a {
+  text-decoration: none;
+  color: $blue-dark;
+  &:hover {
+    text-decoration: underline;
+    color: $blue-light;
+  }
 }
 
 main {
@@ -83,7 +91,7 @@ aside {
   }
   section {
     float: left;
-    padding-left: 1rem;
+    padding-left: 2rem;
     width: 75%;
   }
 }
