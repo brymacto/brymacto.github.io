@@ -8,68 +8,230 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N8H6RC');</script>
   <!-- End Google Tag Manager -->
-  <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin="anonymous">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bryan MacDiarmid | Full stack software developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/bd73ef0fbf.js" crossorigin="anonymous"></script>
-  <meta name="description" content="Bryan MacDiarmid is a full stack software developer based in Toronto, currently working as a Senior Software Engineer at Tropic. Connect with him on LinkedIn, GitHub, Twitter, or by email."/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bryan MacDiarmid — Full stack software developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta name="description" content="Bryan MacDiarmid is a full stack software developer in Toronto, currently a Senior Software Engineer at Tropic, previously VTS and Nulogy. Photography at @bmacdiarmid." />
+  <link rel="canonical" href="https://brymac.ca/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#1500FF" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="brymac.ca" />
+  <meta property="og:title" content="Bryan MacDiarmid" />
+  <meta property="og:description" content="Bryan MacDiarmid is a full stack software developer in Toronto, currently a Senior Software Engineer at Tropic, previously VTS and Nulogy. Photography at @bmacdiarmid." />
+  <meta property="og:url" content="https://brymac.ca/" />
+  <meta property="og:image" content="https://brymac.ca/portrait.webp" />
+  <meta property="og:image:alt" content="Bryan MacDiarmid" />
+  <meta property="profile:first_name" content="Bryan" />
+  <meta property="profile:last_name" content="MacDiarmid" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@bmacdia" />
+  <meta name="twitter:creator" content="@bmacdia" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5..125,400..900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+  :root{
+    --page:#FFFFFF; --grid:#E4E4E9; --ink:#0A0A0B;
+    --muted:#6B6B78; --blue:#1500FF; --blue-wash:#EFEDFF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    background:var(--page); color:var(--ink);
+    font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    -webkit-font-smoothing:antialiased;
+    font-size:14px;
+    min-height:100vh; display:flex; flex-direction:column;
+  }
+  /* the sheet is sized by its contents and floats centred on tall screens;
+     margin-block:auto centres without clipping when it outgrows the viewport */
+  .sheet{
+    max-width:1180px; width:100%; margin:0 auto; margin-block:auto;
+    display:flex; flex-direction:column;
+    border:1px solid var(--grid);
+  }
+  .pad{padding:clamp(1rem,3.5vw,2rem);}
+
+  /* ---- rail ---- */
+  .rail{
+    display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between;
+    border-bottom:1px solid var(--grid);
+    font-size:.6875rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted);
+    padding:.875rem clamp(1rem,3.5vw,2rem);
+  }
+  .rail b{color:var(--blue); font-weight:700;}
+
+  /* ---- masthead ---- */
+  .masthead{
+    display:grid; gap:clamp(.75rem,2vw,1.25rem);
+    border-bottom:1px solid var(--grid);
+  }
+  h1{
+    margin:0;
+    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
+    font-variation-settings:"wdth" 125,"wght" 800;
+    font-size:max(1.75rem,min(6.75rem,calc((100vw - 5rem) / 8.5))); line-height:.9;
+    letter-spacing:-.035em; color:var(--blue);
+    text-transform:uppercase; text-wrap:balance;
+  }
+  .tagline{
+    margin:0; font-size:.8125rem; font-weight:500;
+    letter-spacing:.06em; color:var(--ink); max-width:44ch; line-height:1.6;
+  }
+  .caret{
+    display:inline-block; width:.55em; height:1.05em; vertical-align:-.16em;
+    background:var(--blue); margin-left:.15em;
+    animation:blink 1.15s step-end infinite;
+  }
+  @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+  @media (prefers-reduced-motion:reduce){.caret{animation:none;}}
+  /* the record and its photo plate share one hairline grid */
+  .body{display:grid; grid-template-columns:1fr;}
+  .plate{
+    margin:0; overflow:hidden; order:-1;
+    aspect-ratio:3 / 2; border-bottom:1px solid var(--grid);
+  }
+  .plate img{
+    display:block; width:100%; height:100%;
+    object-fit:cover; object-position:50% 18%;
+    filter:saturate(1.02) contrast(1.03);
+  }
+  @media (min-width:780px){
+    .body{grid-template-columns:minmax(0,1fr) clamp(210px,26%,300px);}
+    .plate{
+      order:0; aspect-ratio:auto;
+      border-bottom:0; border-left:1px solid var(--grid);
+    }
+  }
+
+  /* ---- record rows ---- */
+  .row{
+    display:grid; grid-template-columns:1fr; gap:.25rem;
+    padding:1.15rem clamp(1rem,3.5vw,2rem);
+    border-bottom:1px solid var(--grid);
+  }
+  @media (min-width:560px){
+    .row{grid-template-columns:9.5rem minmax(0,1fr); gap:1.5rem; align-items:baseline;}
+  }
+  .row dt{
+    font-size:.6875rem; font-weight:700; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .row dd{margin:0; font-size:.875rem; line-height:1.6; font-weight:500;}
+  .row dd a{color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue);}
+  .row dd a:hover,.row dd a:focus-visible{background:var(--blue); color:var(--page);}
+  dl{margin:0;}
+
+  /* ---- link grid ---- */
+  .row:last-child{border-bottom:0;}
+  .links{
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1px; background:var(--grid);
+    border-top:1px solid var(--ink);
+  }
+  @media (min-width:780px){.links{grid-template-columns:repeat(5,minmax(0,1fr));}}
+  .link{
+    display:flex; flex-direction:column; gap:.4rem; justify-content:space-between;
+    min-height:6.5rem; padding:1rem;
+    color:var(--ink); text-decoration:none; background:var(--page);
+    transition:background .15s,color .15s;
+  }
+  /* email leads, and spans the full width while the grid is two columns */
+  .link-mail{grid-column:1 / -1;}
+  @media (min-width:780px){.link-mail{grid-column:auto;}}
+  .link-key{font-size:.6875rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--muted);}
+  .link-val{font-size:.875rem; font-weight:700; overflow-wrap:anywhere;}
+  .link-go{font-size:.75rem; color:var(--blue);}
+  .link:hover,.link:focus-visible{background:var(--blue); color:var(--page);}
+  .link:hover .link-key,.link:hover .link-go,
+  .link:focus-visible .link-key,.link:focus-visible .link-go{color:var(--blue-wash);}
+  .link:focus-visible{outline:2px solid var(--ink); outline-offset:-2px;}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bryan MacDiarmid",
+    "url": "https://brymac.ca/",
+    "image": "https://brymac.ca/portrait.webp",
+    "jobTitle": "Senior Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "Tropic", "url": "https://tropicapp.io/" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "email": "mailto:brymac@gmail.com",
+    "sameAs": [
+      "https://linkedin.com/in/brymac/",
+      "https://github.com/brymacto",
+      "https://instagram.com/bmacdiarmid",
+      "https://x.com/bmacdia"
+    ]
+  }
+  </script>
 </head>
-<body class="bg-gray-50">
+<body>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8H6RC"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div class="min-h-screen flex items-center justify-center p-6">
-    <div class="max-w-3xl w-full flex flex-col lg:flex-row items-center lg:items-center text-center lg:text-left">
-      <img src="portrait.webp" alt="Bryan MacDiarmid" 
-           class="rounded-full w-80 h-80 border-2 border-gray-300 mb-4 lg:mb-0 lg:mr-12" />
-      <div>
-        <h1 class="text-2xl font-bold mb-2 md:text-4xl lg:text-6xl lg:mb-6">Bryan MacDiarmid</h1>
-        <p class="text-gray-700 mb-6">
-          Hi! I'm a full stack software developer based in Toronto. 
-          I'm currently working as a Senior&nbsp;Software&nbsp;Engineer at 
-          <a href="https://tropicapp.io/" target="_blank" class="text-blue-600 underline hover:text-blue-800">
-            Tropic
-          </a>, with previous experience at <a href="https://vts.com/" target="_blank" class="text-blue-600 underline hover:text-blue-800">VTS</a> and <a href="https://nulogy.com/" target="_blank" class="text-blue-600 underline hover:text-blue-800">Nulogy</a>.
-        </p>
-        
-        <div class="flex flex-col md:flex-row md:justify-center items-center gap-4 w-full text-center">
-          <a 
-            href="https://linkedin.com/in/brymac/"
-            class="block w-full md:inline-block md:w-auto py-2 px-4 text-white rounded bg-[rgb(10,102,194)] hover:bg-[rgb(9,92,175)] transition"  
-            target="_blank"
-          >
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-          </a>
-          <a 
-            href="https://github.com/brymacto"
-            class="block w-full md:inline-block md:w-auto py-2 px-4 text-white rounded bg-[rgb(43,49,55)] hover:bg-[rgb(36,41,46)] transition" 
-            target="_blank"
-          >
-          <i class="fa-brands fa-github"></i> GitHub
-          </a>
-          <a 
-            href="https://x.com/bmacdia"
-            class="block w-full md:inline-block md:w-auto py-2 px-4 text-white rounded bg-[rgb(29,161,242)] hover:bg-[rgb(26,145,218)] transition" 
-            target="_blank"
-          >
-          <i class="fa-brands fa-twitter"></i> Twitter
-          </a>
-          <a 
-            href="mailto:brymac@gmail.com"
-            class="block w-full md:inline-block md:w-auto py-2 px-4 text-white rounded bg-[rgb(62,101,207)] hover:bg-[rgb(59,96,196)] transition" 
-            target="_blank"
-          >
-          <i class="fa-solid fa-envelope"></i> brymac@gmail.com
-          </a>
-        </div>
-        
-        
-        
-      </div>
+  <main class="sheet">
+    <div class="rail">
+      <span><b>brymac.ca</b></span>
+      <span>43.6532&deg; N, 79.3832&deg; W</span>
+      <span>Toronto &middot; UTC&minus;5</span>
     </div>
-  </div>
+
+    <div class="masthead pad">
+      <h1>Bryan<br />MacDiarmid</h1>
+      <p class="tagline">Full stack software developer<span class="caret" aria-hidden="true"></span></p>
+    </div>
+
+    <div class="body">
+      <dl class="record">
+        <div class="row"><dt>Role</dt><dd>Senior Software Engineer</dd></div>
+        <div class="row"><dt>Company</dt><dd><a href="https://tropicapp.io/" target="_blank" rel="noopener">Tropic</a></dd></div>
+        <div class="row"><dt>Previously</dt><dd><a href="https://vts.com/" target="_blank" rel="noopener">VTS</a>, <a href="https://nulogy.com/" target="_blank" rel="noopener">Nulogy</a></dd></div>
+        <div class="row"><dt>Also</dt><dd>Photography &mdash; <a href="https://instagram.com/bmacdiarmid" target="_blank" rel="noopener">@bmacdiarmid</a></dd></div>
+        <div class="row"><dt>Based in</dt><dd>Toronto, Ontario, Canada</dd></div>
+      </dl>
+      <figure class="plate">
+        <img src="portrait.webp" width="640" height="640" alt="Bryan MacDiarmid" />
+      </figure>
+    </div>
+
+    <nav class="links">
+      <a class="link link-mail" href="mailto:brymac@gmail.com">
+        <span class="link-key">Email</span>
+        <span class="link-val">brymac@gmail.com</span>
+        <span class="link-go">&rarr; compose</span>
+      </a>
+      <a class="link" href="https://linkedin.com/in/brymac/" target="_blank" rel="noopener">
+        <span class="link-key">LinkedIn</span>
+        <span class="link-val">/in/brymac</span>
+        <span class="link-go">&rarr; connect</span>
+      </a>
+      <a class="link" href="https://github.com/brymacto" target="_blank" rel="noopener">
+        <span class="link-key">GitHub</span>
+        <span class="link-val">@brymacto</span>
+        <span class="link-go">&rarr; repos</span>
+      </a>
+      <a class="link" href="https://instagram.com/bmacdiarmid" target="_blank" rel="noopener">
+        <span class="link-key">Instagram</span>
+        <span class="link-val">@bmacdiarmid</span>
+        <span class="link-go">&rarr; photos</span>
+      </a>
+      <a class="link" href="https://x.com/bmacdia" target="_blank" rel="noopener">
+        <span class="link-key">X</span>
+        <span class="link-val">@bmacdia</span>
+        <span class="link-go">&rarr; posts</span>
+      </a>
+    </nav>
+  </main>
 </body>
 </html>
